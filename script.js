@@ -1,11 +1,12 @@
 const board = document.querySelector('#container-board');
 const sliderBar = document.querySelector('#slider-bar');
 const sliderDisplay = document.querySelector('#slider-display')
-const divDom = document.querySelectorAll('.grid-square');
+const gridSquare = document.querySelectorAll('.grid-square');
 
 let size;
 let divCount;
-let oldSize
+let oldSize;
+
 
 function createGrid(){
     size = Number(sliderBar.value);
@@ -17,6 +18,9 @@ function createGrid(){
         div.style.width = `calc(100%/${size})`;
         div.style.height = `calc(100%/${size})`;
         div.style.border = "1px solid black";
+        div.addEventListener('mouseover', ()=>{
+            div.style.backgroundColor = "black"
+        });
         board.appendChild(div);
     };
 };
@@ -24,17 +28,10 @@ function createGrid(){
 function clearGrid(){
     let divToRemove = oldSize*oldSize;
     let cells = board.querySelectorAll('div');
-    console.log('remove '+divToRemove+' divs');
     cells.forEach(cell => cell.remove());
     };
 
-function changeCellColor(){
-    divDom.forEach((square) =>{
-        square.addEventListener('mouseover', ()=>{
-            square.style.backgroundColor = "gray";
-        })
-    })
-};
+
 
 sliderBar.addEventListener('input', (e) =>{
     sliderDisplay.textContent = e.target.value+'x'+e.target.value;
@@ -46,8 +43,9 @@ sliderBar.addEventListener('input', (e) =>{
 
 
 
+
 createGrid();
-changeCellColor();
+
 
 
 
