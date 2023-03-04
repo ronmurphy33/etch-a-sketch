@@ -8,6 +8,10 @@ let divCount;
 let oldSize;
 
 
+
+function getRandomNumber(){
+    return Math.floor(Math.random()*256);
+};
 function createGrid(){
     size = Number(sliderBar.value);
     divCount = size*size;
@@ -19,7 +23,12 @@ function createGrid(){
         div.style.height = `calc(100%/${size})`;
         div.style.border = "1px solid black";
         div.addEventListener('mouseover', ()=>{
-            div.style.backgroundColor = "black"
+            let randomColor = "rgb("
+            +getRandomNumber()+","
+            +getRandomNumber()+","
+            +getRandomNumber()+")";
+            let gridColor = randomColor;
+            div.style.backgroundColor = gridColor;
         });
         board.appendChild(div);
     };

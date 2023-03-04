@@ -13,8 +13,41 @@
 }
 
 #container-controls{
-    border: 2px solid red;
+    border: 2px solid rgb(0, 5, 255);
+    padding: 1rem;
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    font-size: 1.5rem;
 }
+
+#slider-container{
+    border: 2px solid red;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex:1;
+}
+
+#slider-bar{
+    color:purple;
+}
+
+#toggle-container{
+    flex:1;
+    border:2px solid green;
+
+}
+
+#clear-container{
+    flex:1;
+    border:2px solid purple;
+}
+
+
 
 #container-board{
     display:flex;
@@ -22,3 +55,4 @@
     width: 40rem;
     height: 40rem;
 }
+
