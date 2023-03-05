@@ -2,10 +2,13 @@ const board = document.querySelector('#container-board');
 const sliderBar = document.querySelector('#slider-bar');
 const sliderDisplay = document.querySelector('#slider-display')
 const gridSquare = document.querySelectorAll('.grid-square');
+const blackBtn = document.querySelector('#black-color-btn');
+const multiColorBtn = document.querySelector('#multi-color-btn');
 
 let size;
 let divCount;
 let oldSize;
+let gridColor;
 
 
 
@@ -23,12 +26,16 @@ function createGrid(){
         div.style.height = `calc(100%/${size})`;
         div.style.border = "1px solid black";
         div.addEventListener('mouseover', ()=>{
-            let randomColor = "rgb("
-            +getRandomNumber()+","
-            +getRandomNumber()+","
-            +getRandomNumber()+")";
-            let gridColor = randomColor;
-            div.style.backgroundColor = gridColor;
+            if (gridColor == "black"){
+                div.style.backgroundColor = 'black';
+            } else {
+                let randomColor = "rgb("
+                +getRandomNumber()+","
+                +getRandomNumber()+","
+                +getRandomNumber()+")";
+                gridColor = randomColor;
+                div.style.backgroundColor = gridColor;
+            }
         });
         board.appendChild(div);
     };
@@ -50,12 +57,16 @@ sliderBar.addEventListener('input', (e) =>{
     createGrid();
 });
 
+blackBtn.addEventListener('click', ()=>{
+    gridColor = "black";
+});
+
+multiColorBtn.addEventListener('click', ()=>{
+    gridColor = randomColor;
+})
+
+
 
 
 
 createGrid();
-
-
-
-
-
