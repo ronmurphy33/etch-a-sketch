@@ -4,11 +4,12 @@ const sliderDisplay = document.querySelector('#slider-display')
 const gridSquare = document.querySelectorAll('.grid-square');
 const blackBtn = document.querySelector('#black-color-btn');
 const multiColorBtn = document.querySelector('#multi-color-btn');
+const resetBtn = document.querySelector('#reset-btn');
 
 let size;
 let divCount;
 let oldSize;
-let gridColor;
+let gridColor ='rgb(59,68,75)';
 
 
 
@@ -26,9 +27,10 @@ function createGrid(){
         div.style.height = `calc(100%/${size})`;
         div.style.border = "1px solid black";
         div.addEventListener('mouseover', ()=>{
-            if (gridColor == "black"){
-                div.style.backgroundColor = 'black';
-            } else {
+            if (gridColor == "rgb(59,68,75)"){
+                div.style.backgroundColor = 'rgb(59,68,75)';
+            } else if (gridColor = "multi")
+            {
                 let randomColor = "rgb("
                 +getRandomNumber()+","
                 +getRandomNumber()+","
@@ -62,9 +64,15 @@ blackBtn.addEventListener('click', ()=>{
 });
 
 multiColorBtn.addEventListener('click', ()=>{
-    gridColor = randomColor;
-})
+    gridColor = "multi"
+});
 
+resetBtn.addEventListener('click', ()=>{
+    const gridSquare = document.querySelectorAll('.grid-square');
+    gridSquare.forEach(square =>{
+        square.style.backgroundColor = 'white';
+    });
+});
 
 
 
