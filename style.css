@@ -5,6 +5,12 @@
     font-family: "arial", "helvetica", sans-serif;
 }
 
+h1{
+    -webkit-text-stroke: 3px #ee2029;
+    color: white;
+    font-style: oblique;
+}
+
 body{
     display: flex;
     flex-direction: column;
@@ -34,16 +40,16 @@ h1{
 
 #container-controls{
     border: 2px solid rgb(0, 5, 255);
-    padding: 1rem;
     width: 15rem;
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    border: 1rem solid #ee2029;
+    border-radius: 25px;
 }
 
 #slider-container{
-    border: 2px solid red;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -58,7 +64,6 @@ h1{
 
 #toggle-container{
     flex:1;
-    border:2px solid green;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,7 +74,6 @@ h1{
 
 #clear-container{
     flex:1;
-    border:2px solid purple;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -82,5 +86,7 @@ h1{
     flex-wrap: wrap;
     width: 40rem;
     height: 40rem;
-}
+    border: 2rem solid #ee2029;
+    border-radius: 25px;
+};
 

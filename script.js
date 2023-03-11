@@ -60,7 +60,7 @@ sliderBar.addEventListener('input', (e) =>{
 });
 
 blackBtn.addEventListener('click', ()=>{
-    gridColor = "black";
+    gridColor = "rgb(59,68,75)";
 });
 
 multiColorBtn.addEventListener('click', ()=>{
