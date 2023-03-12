@@ -47,6 +47,8 @@ button:active{
     font-size: 2rem;
     margin: auto;
     margin-bottom: 3rem;
+    justify-content: center;
+    align-items: center;
 }
 
 #container{
@@ -68,7 +70,6 @@ button:active{
     border: 1rem solid #ee2029;
     border-radius: 25px;
     align-self: center;
-
 }
 
 #slider-container{
@@ -100,5 +101,21 @@ button:active{
     height: 40rem;
     border: 2rem solid #ee2029;
     border-radius: 25px;
-};
+}
 
+@media only screen and (max-width: 600px){
+    *{
+        overflow:auto;
+    }
+    #container{
+        flex-direction: column-reverse;
+    }
+    #container-controls{
+        width: 100vw;
+        height: 20%;
+        flex-direction: row;
+    }
+    #container-board{
+        width: 100vw;
+    }
+}
